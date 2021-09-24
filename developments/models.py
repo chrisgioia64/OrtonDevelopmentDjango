@@ -25,7 +25,10 @@ class Development(models.Model):
   history_text = models.TextField()
   redevelopment_text = models.TextField()
   current_status_text = models.TextField()
-  property_manager_name = models.CharField(max_length=50, blank=True)
+
+  project_manager_name = models.CharField(max_length=100, blank=True)
+  project_manager_email = models.EmailField(max_length=254, blank=True)
+  property_manager_name = models.CharField(max_length=100, blank=True)
   property_manager_email = models.EmailField(max_length=254, blank=True)
 
   def save(self, *args, **kwargs):
