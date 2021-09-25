@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.conf import settings
 from .models import Development
 from django.http import Http404
 
@@ -15,3 +16,10 @@ def detail(request, development_id):
     raise Http404("Development does not exist")
   return render(request, 'developments/detail.html',
           {'development' : development})
+
+def portfolio(request):
+  developments = Development.objects.all()
+  return render( request, 'Developments/portfolio.html',
+          {'developments' : developments,
+            'MEDIA_URL' : settings.MEDIA_URL}
+        )
