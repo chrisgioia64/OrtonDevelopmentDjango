@@ -8,7 +8,7 @@ class Development(models.Model):
     ('I', 'Industrial'),
     ('M', 'Mixed Use'),
   ]
-  name = models.CharField(primary_key=True, max_length=100)
+  name = models.CharField(unique=True, max_length=100)
   address = models.CharField(max_length=200)
   latitude = models.DecimalField(blank=True,max_digits=15, 
     editable=False,decimal_places=9)
