@@ -15,7 +15,8 @@ def detail(request, development_id):
   except Development.DoesNotExist:
     raise Http404("Development does not exist")
   return render(request, 'developments/detail.html',
-          {'development' : development})
+          {'development' : development,
+          'MEDIA_URL' : settings.MEDIA_URL})
 
 def portfolio(request):
   developments = Development.objects.all()

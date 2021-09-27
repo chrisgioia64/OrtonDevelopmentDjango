@@ -39,5 +39,11 @@ class Development(models.Model):
     self.longitude = 0.0
     super().save(*args, **kwargs)  # Call the "real" save() method.
   
+  def getZoningType(self):
+    for abbr, detail in self.ZONE_TYPES:
+      if abbr == self.zoning_type:
+        return detail
+    return ""
+
   def __str__(self):
     return self.name

@@ -1,14 +1,182 @@
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Orton Developments -- {{ development.name }}</title>
-  
-</head>
-<body>
-  <h2>{{development.name }}</h2>
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Development: {{ development.name }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'nicepage.css' %}" media="screen">
+<link rel="stylesheet" href="{% static 'detail.css' %}" media="screen">
+    <script class="u-script" type="text/javascript" src="{% static 'jquery.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'nicepage.js' %}" defer=""></script>
+    <meta name="generator" content="Nicepage 3.26.0, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "Site1",
+		"logo": "images/orton-development.gif"
+}</script>
+    <meta name="theme-color" content="#5e6e66">
+    <meta property="og:title" content="Detail">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+  </head>
+  <body class="u-body"><header class="u-clearfix u-custom-color-1 u-header u-header" id="sec-d897"><div class="u-clearfix u-sheet u-sheet-1">
+        <a href="Home.html" data-page-id="2845620712" class="u-image u-logo u-image-1" data-image-width="200" data-image-height="100" title="Home">
+          <img src="{% static 'images/orton-development.gif' %}" class="u-logo-image u-logo-image-1">
+        </a>
+        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; text-transform: uppercase; font-weight: 500;">
+            <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;"><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</symbol>
+</defs></svg>
+            </a>
+          </div>
+          <div class="u-custom-menu u-nav-container">
+            <ul class="u-nav u-spacing-2 u-unstyled u-nav-1">
+     <li class="u-nav-item"><a class="u-active-palette-1-base u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-hover-palette-1-light-1 u-nav-link u-text-active-white u-text-grey-90 u-text-hover-white" href="/developments/index.html" style="padding: 18px 20px;">Home</a>
+</li><li class="u-nav-item"><a class="u-active-palette-1-base u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-hover-palette-1-light-1 u-nav-link u-text-active-white u-text-grey-90 u-text-hover-white" href="/developments/about.html" style="padding: 18px 20px;">About</a>
+</li><li class="u-nav-item"><a class="u-active-palette-1-base u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-hover-palette-1-light-1 u-nav-link u-text-active-white u-text-grey-90 u-text-hover-white" href="/developments/portfolio" style="padding: 18px 20px;">Portfolio</a>
+</li><li class="u-nav-item"><a class="u-active-palette-1-base u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-hover-palette-1-light-1 u-nav-link u-text-active-white u-text-grey-90 u-text-hover-white" href="/developments/contact.html" style="padding: 18px 20px;">Contact</a>
+<!-- </li><li class="u-nav-item"><a class="u-active-palette-1-base u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-hover-palette-1-light-1 u-nav-link u-text-active-white u-text-grey-90 u-text-hover-white" href="Detail.html" style="padding: 18px 20px;">Detail</a> -->
+</li></ul>
+          </div>
+          <div class="u-custom-menu u-nav-container-collapse">
+            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.html" style="padding: 18px 20px;">Home</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="About.html" style="padding: 18px 20px;">About</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Portfolio.html" style="padding: 18px 20px;">Portfolio</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Contact.html" style="padding: 18px 20px;">Contact</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Detail.html" style="padding: 18px 20px;">Detail</a>
+</li></ul>
+              </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+        </nav>
+      </div></header>
+    <section class="u-align-center u-clearfix u-grey-15 u-section-1" id="sec-af5f">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-tabs u-tabs-1">
+          <ul class="u-spacing-15 u-tab-list u-unstyled" role="tablist">
+            <li class="u-tab-item" role="presentation">
+              <a class="active u-active-white u-button-style u-palette-1-light-1 u-tab-link u-text-custom-color-2 u-tab-link-1" id="link-tab-0da5" href="#tab-0da5" role="tab" aria-controls="tab-0da5" aria-selected="true">{{ development.name }}</a>
+            </li>
+          </ul>
+          <div class="u-tab-content">
+            <div class="u-container-style u-tab-active u-tab-pane u-white u-tab-pane-1" id="tab-0da5" role="tabpanel" aria-labelledby="link-tab-0da5">
+              <div class="u-container-layout u-valign-bottom-sm u-valign-top-xs u-container-layout-1">
+                <img alt="" class="u-expanded-width-xs u-image u-image-default u-image-1" data-image-width="2836" data-image-height="1875" src="{{ MEDIA_URL }}{{ development.thumbnail_img }} ">
+                <div class="u-custom-list u-text u-text-1">
+                  <table id='overview-table'>
+                    <tr>
+                      <td class='col_attr'>Address</td>
+                      <td class='col_val'>{{development.address}}</td>
+                    </tr>
+                    <tr>
+                      <td class='col_attr'>Acquired</td>
+                      <td class='col_val'>{{development.acquired}}</td>
+                    </tr>
+                    <tr>
+                      <td class='col_attr'>Zoning Type</td>
+                      <td class='col_val'>{{development.getZoningType}}</td>
+                    </tr>
+                    <tr>
+                      <td class='col_attr'>Status</td>
+                      <td class='col_val'>
+                        {% if development.sold %}
+                          <font color='red'> <b>Sold</b></font>
+                        {% else %}
+                        Available
+                        {%endif%}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class='col_attr'>Project Manager</td>
+                      <td class='col_val'>
+                        {{ development.project_manager_name }}
 
-  <p>{{ development.address }}</p>
-</body>
+                        
+                        {% if development.project_manager_email %}
+                          ({{ development.project_manager_email }})
+                        {%endif %}
+
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class='col_attr'>Property Manager</td>
+                      <td class='col_val'>
+
+                        {{ development.property_manager_name }}
+
+                        {% if development.property_manager_email %}
+                          ({{ development.property_manager_email }})
+                        {%endif %}
+                      </td>
+                    </tr>
+
+                  </table>
+                </div>
+                <p class="u-text u-text-2">
+                  {% if development.property_text %}
+                    <b>Property:</b>
+                    {{development.property_text}}
+                  {% endif %}
+                 </p>
+                <p class="u-text u-text-2">
+                  {% if development.history_text %}
+                  <b>History:</b>
+                  {{development.history_text}}
+                  <br>
+                {% endif %}
+                </p>
+
+                <p class="u-text u-text-2">
+                  {% if development.redevelopment_text %}
+                  <b>Redevelopment:</b>
+                  {{development.redevelopment_text}}
+                  <br>
+                {% endif %}
+
+                <p class="u-text u-text-2">
+                  {% if development.current_status_text %}
+                  <b>Current Status:</b>
+                  {{development.current_status_text}}
+                  <br>
+                {% endif %}
+                </p>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    <footer class="u-align-center u-clearfix u-custom-color-1 u-footer u-footer" id="sec-24f4"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1">2021 ODI All Rights Reserved </p>
+      </div></footer>
+    <!-- <section class="u-backlink u-clearfix u-grey-80">
+      <a class="u-link" href="https://nicepage.com/website-design" target="_blank">
+        <span>Website Design</span>
+      </a>
+      <p class="u-text">
+        <span>created with</span>
+      </p>
+      <a class="u-link" href="https://nicepage.com/" target="_blank">
+        <span>Website Builder Software</span>
+      </a>. 
+    </section> -->
+  </body>
 </html>
