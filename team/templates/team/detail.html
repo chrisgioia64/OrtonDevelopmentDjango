@@ -1,0 +1,44 @@
+
+
+{% extends "base.html" %}
+
+{% block title %}{% endblock %}
+
+{%load static %}
+
+{%block custom_css %}{% static 'contact.css' %} {%endblock%}
+
+{%block content %}
+
+<section class="u-clearfix u-section-1" id="sec-d829">
+  <div class="u-clearfix u-sheet u-sheet-1">
+    <div class="u-clearfix u-expanded-width u-gutter-100 u-layout-wrap u-layout-wrap-1">
+      <div class="u-layout">
+        <div class="u-layout-row">
+          <div class="u-align-center u-container-style u-layout-cell u-left-cell u-size-13 u-layout-cell-1">
+            <div class="u-container-layout u-container-layout-1">
+              <img class="u-image u-image-round u-radius-10 u-image-1" src="{{ MEDIA_URL }}{{ employee.img }}" alt="" data-image-width="200" data-image-height="285">
+            </div>
+          </div>
+          <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-47 u-layout-cell-2">
+            <div class="u-container-layout u-container-layout-2">
+              <h2 class="u-text u-text-1">{{ employee.first_name }} {{employee.last_name}}</h2>
+              <p class="u-text u-text-2">
+                {{ employee.description }}
+
+                {% if employee.university1 %}
+                  <p class="u-text u-text-3"><i>{{ employee.university1 }} <br> {{employee.major1}} </i></p>
+                {% endif %}
+
+                {% if employee.university2 %}
+                  <p class="u-text u-text-3"><i>{{ employee.university2 }} <br> {{employee.major2}} </i></p>
+                {% endif %}
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

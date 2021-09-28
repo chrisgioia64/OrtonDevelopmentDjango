@@ -6,8 +6,6 @@ from django.http import Http404
 # Create your views here.
 from django.http import HttpResponse
 
-def index(request):
-  return HttpResponse("main page")
 
 def detail(request, development_id):
   try:
@@ -20,7 +18,7 @@ def detail(request, development_id):
 
 def portfolio(request):
   developments = Development.objects.all()
-  return render( request, 'Developments/portfolio.html',
+  return render( request, 'developments/portfolio.html',
           {'developments' : developments,
             'MEDIA_URL' : settings.MEDIA_URL}
         )
