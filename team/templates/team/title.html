@@ -1,5 +1,4 @@
 
-
 {% extends "base.html" %}
 
 {% block title %}{% endblock %}
@@ -10,7 +9,40 @@
 
 {%block content %}
 
-<section class="u-clearfix u-section-1" id="sec-d829">
+<h2 class="u-text u-text-1 title-heading"> {{title }} </h2>
+
+{% for employee in employees %}
+
+<section class="employee-section">
+  <div class="employee-heading">
+    <div class="box1"></div>
+    <div class="box2">
+      <h3 class="u-text u-text-1">{{ employee.first_name }} {{employee.last_name}}</h3>
+    </div>
+  </div>
+
+  <div class="employee-content">
+    <div class="employee-image-box">
+      <img class="u-image u-image-round u-radius-10 u-image-1" src="{{ MEDIA_URL }}{{ employee.img }}" alt="" data-image-width="200" data-image-height="285">
+    </div>
+    <div class="employee-text-box">
+      
+      <p class="u-text u-text-2">
+        {{employee.description}}
+
+        
+      </p>
+
+    </div>  
+
+  </div>
+  
+ 
+  </div>
+</section>
+
+
+<!-- <section class="u-clearfix u-section-1" id="sec-d829">
   <div class="u-clearfix u-sheet u-sheet-1">
     <div class="u-clearfix u-expanded-width u-gutter-100 u-layout-wrap u-layout-wrap-1">
       <div class="u-layout">
@@ -34,15 +66,13 @@
                   <p class="u-text u-text-3"><i>{{ employee.university2 }} <br> {{employee.major2}} </i></p>
                 {% endif %}
 
-                <!-- {{employee.employee_type}} -->
-                <p class="u-text u-text-3">View all <a href="/team/title/{{employee.employee_type}}">
-                  {{ employee.employee_type }}</a>
-                </p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
+
+{% endfor %}
 
 {% endblock %}

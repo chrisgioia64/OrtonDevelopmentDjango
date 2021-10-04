@@ -5,8 +5,40 @@
 
 {%load static %}
 
-<!-- {%block custom_css %}{% static 'portfolio.css' %} {%endblock%} -->
+{%block custom_css %}{% static 'team.css' %} {%endblock%}
 
 {%block content %}
+
+
+<div class="content">
+  <div class="inner-content">
+    
+    {% for office in offices %}
+          
+      <div class="flex-grid">
+        <div class="col">
+          <b>{{office.name }} </b>
+          <p class='u-text'>
+            {{ office.address}} <br>
+            {{ office.city }}, {{office.state}} {{office.zip_code}} <br>
+            Tel: {{office.telephone}} <br>
+            Fax: {{office.fax}} <br>
+          </p>
+        </div>
+        <div class="col">
+          {% for employee in office.getMembers %}
+            <p class="u-text">
+              <a href="/team/employee/{{employee.id }}">
+                {{ employee.first_name }} {{employee.last_name }}</a>
+            </p>
+          {% endfor %}
+        </div>
+      </div>
+
+    {% endfor %}
+  
+  </div>
+</div>
+
 
 {% endblock %}

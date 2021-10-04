@@ -1,0 +1,28 @@
+
+    .content {
+      /* width: 80%; */
+      margin-left: 15%;
+      margin-right: 15%;
+      margin-bottom: 50px;
+    }
+
+    .inner-content {
+      margin-right: 25%;
+      display: block;
+      /* border: 1px solid brown; */
+    }
+
+    .flex-grid {
+      display: flex;
+      border-bottom: 1px solid black;
+    }
+    .col {
+      flex: 1;
+      /* border: 1px solid black; */
+      padding: 10px;
+    }
+
+    @media (max-width: 600px) {
+  .flex-grid {
+    display: block;
+  }

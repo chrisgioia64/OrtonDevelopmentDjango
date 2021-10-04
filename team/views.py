@@ -9,7 +9,10 @@ from .models import *
 from django.http import HttpResponse
 
 def index(request):
-  return render(request, 'team/index.html', {})
+  offices = Office.objects.all()
+  return render(request, 'team/index.html', {
+    'offices' : offices
+  })
 
 def detail(request, employee_id):
   try:
@@ -20,3 +23,12 @@ def detail(request, employee_id):
           {'employee' : employee,
           'MEDIA_URL' : settings.MEDIA_URL})
   
+def title(request, titleStr):
+  
+  employees = Employee.objects.filter(title=titleStr)
+  if len(employees) == 0:
+    raise Http404("No employees for title")
+  return render(request, 'team/title.html',
+          { 'title' : titleStr,
+            'employees' : employees,
+          'MEDIA_URL' : settings.MEDIA_URL})

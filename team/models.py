@@ -12,6 +12,14 @@ class Office(models.Model):
   telephone = models.CharField(max_length=20, blank=True, null=True)
   fax = models.CharField(max_length=20, blank=True, null=True)
 
+  def getMembers(self):
+    filtered_employees = []
+    employees = Employee.objects.all()
+    for employee in employees:
+      if employee.office == self:
+        filtered_employees.append(employee)
+    return filtered_employees
+
   def __str__(self):
     return self.name
 
@@ -26,7 +34,7 @@ class Employee(models.Model):
   last_name = models.CharField(max_length=200)
   title = models.CharField(max_length=200)
   description = models.TextField()
-  img = models.ImageField(upload_to='img/team/')
+  img = models.ImageField(upload_to='img/team/', blank=True)
   university1 = models.CharField(max_length=400, blank=True)
   major1 = models.CharField(max_length=400, blank=True)
   university2 = models.CharField(max_length=400, blank=True)
