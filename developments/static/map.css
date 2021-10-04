@@ -1,0 +1,17 @@
+#map {
+  /* height: 100%; */
+  background-color: rgb(240, 240, 240);
+  height: 500px;
+}
+
+#thumbnail_img {
+  border: 2px solid blue;
+}
+
+#thumbnail_text {
+  text-align: center;
+}
+
+#thumbnail_text a {
+  text-align: center;
+}

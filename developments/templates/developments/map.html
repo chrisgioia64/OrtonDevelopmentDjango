@@ -1,0 +1,17 @@
+
+{% extends "base.html" %}
+
+{% block title %}Portfolio{% endblock %}
+
+{%load static %}
+
+{%block custom_css %}{% static 'map.css' %} {%endblock%}
+
+{%block content %}
+
+  <div id="map"></div>
+  
+  <script src="/static/map.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSOibJ9zBuUyhoacW7Y8K0vfvHcTC288E&callback=initMap"></script>
+  
+{% endblock %}

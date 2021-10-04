@@ -1,7 +1,9 @@
 from django.db import models
+import googlemaps
+
+gmaps = googlemaps.Client(key='AIzaSyDSOibJ9zBuUyhoacW7Y8K0vfvHcTC288E')
 
 # Create your models here.
-
 class Development(models.Model):
   ZONE_TYPES = [
     ('C', 'Commercial'),
@@ -35,8 +37,16 @@ class Development(models.Model):
   property_manager_email = models.EmailField(max_length=254, blank=True)
 
   def save(self, *args, **kwargs):
+    geocode_result = gmaps.geocode(self.address)
     self.latitude = 0.0
     self.longitude = 0.0
+    try:
+      loc = geocode_result[0]['geometry']['location']
+      self.latitude = loc['lat']
+      self.longitude = loc['lng']
+    except Exception as err:
+      print("error" + str(err))
+
     super().save(*args, **kwargs)  # Call the "real" save() method.
   
   def getZoningType(self):
