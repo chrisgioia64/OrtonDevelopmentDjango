@@ -1,15 +1,33 @@
 let map;
+// import { MarkerClusterer } from '@googlemaps/markerclusterer';
+
+// $(function () {
+//   $.when(
+//     $.getScript('/script1'),
+//     $.getScript('/scirpt2'),
+//     $.getScript('/script3')
+//   );
+// }).done(function () {
+//   // do stuff with the contents of my new script files
+// });
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
-    center: { lat: 37.8, lng: -122.239 },
-    zoom: 10,
+    center: { lat: 39, lng: -100.239 },
+    zoom: 5,
   });
 
   $.getJSON('/developments/developments.json', function (j) {
     json = j['developments'];
     console.log('length: ' + json.length);
     const infoWindow = new google.maps.InfoWindow();
+
+    // create an array of all your markers
+    const markers = [];
+
+    // Path for cluster icons to be appended (1.png, 2.png, etc.)
+    const imagePath =
+      'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m';
 
     for (let i = 0; i < json.length; i++) {
       let data = json[i];
@@ -25,6 +43,7 @@ function initMap() {
         position: pos,
         map: map,
       });
+      markers.push(marker);
 
       marker.addListener('click', () => {
         boxText = document.createElement('html');
@@ -48,6 +67,18 @@ function initMap() {
         infoWindow.open(marker.getMap(), marker);
       });
     }
+
+    // Enable marker clustering for this map and these markers
+    // const cluster = new markerClusterer.MarkerClusterer(map, markers, {
+    //   imagePath: imagePath,
+    // });
+
+    const cluster = new MarkerClusterer(map, markers, {
+      imagePath: imagePath,
+    });
+
     // console.log(json); // this will show the info it in firebug console
   });
 }
+
+// setTimeout(initMap, 10000);
