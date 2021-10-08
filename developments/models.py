@@ -6,18 +6,28 @@ gmaps = googlemaps.Client(key='AIzaSyDSOibJ9zBuUyhoacW7Y8K0vfvHcTC288E')
 # Create your models here.
 class Development(models.Model):
   ZONE_TYPES = [
+    ('U', 'Unassigned'),
     ('C', 'Commercial'),
     ('I', 'Industrial'),
     ('M', 'Mixed Use'),
   ]
   name = models.CharField(unique=True, max_length=100)
   address = models.CharField(max_length=200)
+  city = models.CharField(max_length=100, blank=True, null=True)
+  state = models.CharField(max_length=100, blank=True, null=True)
+  zip_code = models.IntegerField(blank=True, null=True)
+  REGIONS = [
+    ('W', 'Western U.S.'),
+    ('M', 'Midwest U.S.'),
+    ('S', 'Southeast U.S.')
+  ]
+  region = models.CharField(max_length=1, choices=REGIONS, default='W')
   latitude = models.DecimalField(blank=True,max_digits=15, 
     editable=False,decimal_places=9)
   longitude = models.DecimalField(blank=True,max_digits=15,
     editable=False,decimal_places=9)
-  zoning_type = models.CharField(max_length=1, choices=ZONE_TYPES, default='C')
-  web_url = models.URLField(max_length=100)
+  zoning_type = models.CharField(max_length=1, choices=ZONE_TYPES, default='U')
+  web_url = models.URLField(max_length=100, blank=True, null=True)
   full_img = models.ImageField(upload_to='img/full/')
   thumbnail_img = models.ImageField(upload_to='img/thumbnail/')
 
@@ -36,8 +46,11 @@ class Development(models.Model):
   property_manager_name = models.CharField(max_length=100, blank=True)
   property_manager_email = models.EmailField(max_length=254, blank=True)
 
+  def getFullAddress(self):
+    return self.address + " " + self.city + ", " + self.state + " " + str(self.zip_code)
+
   def save(self, *args, **kwargs):
-    geocode_result = gmaps.geocode(self.address)
+    geocode_result = gmaps.geocode(self.getFullAddress())
     self.latitude = 0.0
     self.longitude = 0.0
     try:
@@ -56,4 +69,7 @@ class Development(models.Model):
     return ""
 
   def __str__(self):
-    return self.name
+    if self.city is not None:
+      return '%20s -- (%s)' % (self.name, self.city) 
+    else:
+      return self.name
