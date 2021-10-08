@@ -39,9 +39,14 @@ function initMap() {
         lat: lat,
         lng: lng,
       };
+      icon_img = '/static/images/sold.png';
+      if (!data['sold']) {
+        icon_img = '/static/images/commercial1.png';
+      }
       const marker = new google.maps.Marker({
         position: pos,
         map: map,
+        icon: icon_img,
       });
       markers.push(marker);
 
@@ -76,6 +81,35 @@ function initMap() {
     const cluster = new MarkerClusterer(map, markers, {
       imagePath: imagePath,
     });
+
+    const icons = {
+      sold: {
+        name: 'Sold',
+        icon: '/static/images/sold.png',
+      },
+      available: {
+        name: 'Available',
+        icon: '/static/images/commercial1.png',
+      },
+    };
+
+    const legend = document.getElementById('legend');
+
+    for (const key in icons) {
+      const type = icons[key];
+      const name = type.name;
+      const icon = type.icon;
+      const div = document.createElement('div');
+
+      div.innerHTML = '<img src="' + icon + '"> ' + name;
+      legend.appendChild(div);
+    }
+
+    map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(
+      document.getElementById('legend')
+    );
+
+    legend.style.display = 'block';
 
     // console.log(json); // this will show the info it in firebug console
   });
