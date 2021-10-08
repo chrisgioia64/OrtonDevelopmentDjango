@@ -1,0 +1,49 @@
+Rebecca Rodriguez (from 1st Commercial Realty Group) has no contact information.
+
+Are there properties that are not on the contact list that are still available (i.e. have not been sold)?
+
+There is an Interstate Plaza II, Is there an Interstate Plaza I?
+
+Is it ok to show the email addresses of new property managers on the website?
+
+Is Steve Schwartz considered to be a property manager?
+
+Is the differentiation displayed by the website of property manager and project manager accurate for most properties?
+
+Rod Musson has an email address on the website that's from Orton development and a more up-to-date email address from the contact list? Which email address should we provide?
+
+
+bug: Why doesn't the "Operations" contact group show properly?
+
+Sandra Toon has no profile picture. How should we show that in her bio.
+
+Some of the 'current status' fields might need to be updated.
+
+Maybe default to using the property and project manager from the website if no contact is given.
+
+There are some properties (e.g. Renaissance Park) that are listed as sold on the website but are on the contact list. The addresses of Renaissance Park between the website and the contact list do not match.
+Wow --- renaissance park was once the world's longest department store
+
+Is it intentional to have a web page for Ford Point in general and then one for the Craneway Pavillion.
+
+Was the Bay Valley Food property in Portland, OR renamed to Lil' Pickles?
+
+Maybe add some logic to the contacts where if only one contact is specified, just print "Contact" instead of Property or Project manager
+
+Do we have a more specific address for the "Northwest Commerce Center"?
+
+Should I make my best guess on the zoning type (i.e. infer from the description)?
+
+Maybe include different centerings of maps (e.g. Bay Area, Midwest, Southern California, etc.)
+
+801 Beaumont / 331 Garner seems to be two separate properties. I am just going to include the address 801 Beaumont Ave
+
+----------------------------------------
+
+10/8
+
+~ Is the Cannery Park I property still under ODI ownership?
+ -- it's marked sold under the current website, but there is a property manager listed.
+
+It seems like Rose Canyon is a mix between residential and commercial?
+
