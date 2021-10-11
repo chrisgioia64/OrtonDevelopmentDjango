@@ -11,4 +11,5 @@ urlpatterns = [
   # path('map/', views.map, name='map')
   path('developments.json', views.json, name='json'),
   path('', views.map, name='map'),
+  path('about/', views.about, name='about'),
 ]

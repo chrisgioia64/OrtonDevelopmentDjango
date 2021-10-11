@@ -78,3 +78,6 @@ def json(request):
 def map(request):
   return render(request, 'developments/map.html',
           {'MEDIA_URL' : settings.MEDIA_URL})
+
+def about(request):
+  return render(request, 'developments/about.html')
