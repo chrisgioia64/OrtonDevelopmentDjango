@@ -1,3 +1,40 @@
+.development_filters {
+  margin: 10px;
+  width: 700px;
+  font-family: sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.development_filters li {
+  list-style: none;
+  display: block;
+  width: 120px;
+  float: left;
+  margin-left: 10px;
+  border: 1px solid #000;
+}
+
+.development_filters a {
+  display: block;
+  padding: 3px;
+  text-decoration: none;
+  background-color: #d6dcd9;
+  color: #2f3733;
+  text-align: center;
+}
+
+.development_filters .selected {
+  background-color: #5e6e66;
+  color: white;
+}
+
+.development_filters a:hover {
+  background-color: #f1f3f2;
+  color: black;
+  /* color: #fff; */
+}
+
 .u-section-1 .u-sheet-1 {
   min-height: 670px;
 }
@@ -10,7 +47,9 @@
 .u-section-1 .u-repeater-1 {
   grid-gap: 10px 10px;
   grid-auto-columns: calc(33.3333% - 6.66667px);
-  grid-template-columns: calc(33.3333% - 6.66667px) calc(33.3333% - 6.66667px) calc(33.3333% - 6.66667px);
+  grid-template-columns: calc(33.3333% - 6.66667px) calc(33.3333% - 6.66667px) calc(
+      33.3333% - 6.66667px
+    );
   min-height: 600px;
 }
 

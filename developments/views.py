@@ -18,11 +18,43 @@ def detail(request, development_id):
           {'development' : development,
           'MEDIA_URL' : settings.MEDIA_URL})
 
+def getFilteredDev(developments, map):
+  res = []
+  for dev in developments:
+    found = True
+    if ('region' in map):
+      if (dev.region != map['region']):
+        found = False
+    if ('sold' in map):
+      if (not dev.sold):
+        found = False
+    if found:
+      res.append(dev)
+  
+  return res
+
+def getLinkFilter(map):
+  if ('sold' in map):
+    return 5
+  if ('region' in map):
+    if (map['region'] == 'M'):
+      return 2
+    elif (map['region'] == 'S'):
+      return 3
+    else:
+      return 4
+  return 1
+
 def portfolio(request):
   developments = Development.objects.all()
+  map = request.GET
+  filtered_developments = getFilteredDev(developments, map)
+  filter = getLinkFilter(map)
+
   return render( request, 'developments/portfolio.html',
-          {'developments' : developments,
-            'MEDIA_URL' : settings.MEDIA_URL}
+          {'developments' : filtered_developments,
+            'MEDIA_URL' : settings.MEDIA_URL,
+            'link_filter' : filter}
         )
 
 def json(request):
